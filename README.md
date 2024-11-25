@@ -29,15 +29,27 @@ Converted all object and boolean columns to int and fload using label encoding
 #### Aim
 Identify key patterns and relationships within the data. Inform the development of predictive models. Evaluate the effectiveness of different features in driving conversions.
 
-### Variables Table
-* Variable Name	Role	Type	Demographic	Description	Units	Missing Values
-* encounter_id	ID			Unique identifier of an encounter		no
-* patient_nbr	ID			Unique identifier of a patient		no
-* race	Feature	Categorical	Race	Values: Caucasian, Asian, African American, Hispanic, and other		yes
-* gender	Feature	Categorical	Gender	Values: male, female, and unknown/invalid		no
-* age	Feature	Categorical	Age	Grouped in 10-year intervals: [0, 10), [10, 20),..., [90, 100)		no
-* weight	Feature	Categorical		Weight in pounds.		yes
-* admission_type_id	Feature	Categorical		Integer identifier corresponding to 9 distinct values, for example, emergency, urgent, elective, newborn, and not available		no
-* discharge_disposition_id	Feature	Categorical		Integer identifier corresponding to 29 distinct values, for example, discharged to home, expired, and not available		no
-* admission_source_id	Feature	Categorical		Integer identifier corresponding to 21 distinct values, for example, physician referral, emergency room, and transfer from a hospital		no
-time_in_hospital	Feature	Integer		Integer number of days between admission and discharge		no
+Dataset Information
+What do the instances in this dataset represent?
+
+The instances represent hospitalized patient records diagnosed with diabetes.
+
+Are there recommended data splits?
+
+No recommendation. The standard train-test split could be used. Can use three-way holdout split (i.e., train-validation-test) when doing model selection.
+
+Does the dataset contain data that might be considered sensitive in any way?
+
+Yes. The dataset contains information about the age, gender, and race of the patients.
+
+### Dataset Information
+
+The dataset represents ten years (1999-2008) of clinical care at 130 US hospitals and integrated delivery networks. It includes over 50 features representing patient and hospital outcomes. Information was extracted from the database for encounters that satisfied the following criteria.
+(1)	It is an inpatient encounter (a hospital admission).
+(2)	It is a diabetic encounter, that is, one during which any kind of diabetes was entered into the system as a diagnosis.
+(3)	The length of stay was at least 1 day and at most 14 days.
+(4)	Laboratory tests were performed during the encounter.
+(5)	Medications were administered during the encounter.
+
+The data contains such attributes as patient number, race, gender, age, admission type, time in hospital, medical specialty of admitting physician, number of lab tests performed, HbA1c test result, diagnosis, number of medications, diabetic medications, number of outpatient, inpatient, and emergency visits in the year before the hospitalization, etc.
+
